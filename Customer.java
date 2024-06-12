@@ -1,43 +1,43 @@
 //Customer class
 public class Customer {
   //attributes
-  private String name;
-  private String contactNumber;
-  private String address;
-  private String location;
-  private String email;
+  private String customerName;
+  private String customerNumber;
+  private String customerAddress;
+  private String customerLocation;
+  private String customerEmail;
 
-  public Customer(String name, String contactNumber, String address, String location, String email) {
-	  this.name = name;
-	  this.contactNumber = contactNumber;
-	  this.address = address;
-	  this.location = location;
-	  this.email = email;  
+  public Customer(String customerName, String customerNumber, String customerAddress, String customerLocation, String customerEmail) {
+	  this.customerName = customerName;
+	  this.customerNumber = customerNumber;
+	  this.customerAddress = customerAddress;
+	  this.customerLocation = customerLocation;
+	  this.customerEmail = customerEmail;  
   }
 
   //method for returning the name
-  public String getName() {
-	  return name;  
+  public String getCustomerName() {
+	  return customerName;  
   }
 
   //method for returning the contact number
-  public String getContactNumber() {
-	  return contactNumber;  
+  public String getCustomerNumber() {
+	  return customerNumber;  
   }
 
   //method for returning the address
-  public String getAddress() {
-	  return address;  
+  public String getCustomerAddress() {
+	  return customerAddress;  
   }
 
   //method for returning the location
-  public String getLocation() {
-	  return location;  
+  public String getCustomerLocation() {
+	  return customerLocation;  
   }
 
   //method for returning the email
-  public String getEmail() {  
-	  return email;  
+  public String getCustomerEmail() {  
+	  return customerEmail;  
   }
   
 }
