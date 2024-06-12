@@ -67,21 +67,21 @@ public class InvoiceGenerated {
 	  System.out.println("Enter customer details:");
 
 	  System.out.print("Name: ");
-	  String name = scanner.nextLine();
+	  String customerName = scanner.nextLine();
 
 	  System.out.print("Contact number: ");
-	  String contactNumber = scanner.nextLine();
+	  String customerNumber = scanner.nextLine();
 
 	  System.out.print("Address: ");
-	  String address = scanner.nextLine();
+	  String customerAddress = scanner.nextLine();
 
 	  System.out.print("Location (city): ");
-	  String location = scanner.nextLine();
+	  String customerLocation = scanner.nextLine();
 
 	  System.out.print("Email address: ");
-	  String email = scanner.nextLine();
+	  String customerEmail = scanner.nextLine();
 
-	  return new Customer(name, contactNumber, address, location, email);
+	  return new Customer(customerName, customerNumber, customerAddress, customerLocation, customerEmail);
 	  
   }
 
@@ -90,15 +90,15 @@ public class InvoiceGenerated {
 	  System.out.println("Enter restaurant details:");
 
 	  System.out.print("Name: ");
-	  String name = scanner.nextLine();
+	  String restaurantName = scanner.nextLine();
 
 	  System.out.print("Location (city): ");
-	  String location = scanner.nextLine();
+	  String restaurantLocation = scanner.nextLine();
 
 	  System.out.print("Contact number: ");
-	  String contactNumber = scanner.nextLine();
+	  String restaurantNumber = scanner.nextLine();
 
-	  return new Restaurant(name, location, contactNumber);
+	  return new Restaurant(restaurantName, restaurantLocation, restaurantNumber);
 
   }
 
@@ -138,12 +138,12 @@ public class InvoiceGenerated {
 			  String[] parts = line.split(",");
 
 			  // Extract name, location, and load from the parts
-			  String name = parts[0].trim();
-			  String location = parts[1].trim();
+			  String driverName = parts[0].trim();
+			  String driverLocation = parts[1].trim();
 			  int load = Integer.parseInt(parts[2].trim());
 
 			  // Create a new Driver object and add it to the array
-			  drivers[i++] = new Driver(name, location, load);
+			  drivers[i++] = new Driver(driverName, driverLocation, load);
 
 		  }
 
@@ -198,23 +198,23 @@ public class InvoiceGenerated {
 	  StringBuilder invoice = new StringBuilder();
 
 	  invoice.append("Order number 1234\n");
-	  invoice.append("Customer: ").append(customer.getName()).append("\n");
-	  invoice.append("Email: ").append(customer.getEmail()).append("\n");
-	  invoice.append("Phone number: ").append(customer.getContactNumber()).append("\n");
-	  invoice.append("Location: ").append(customer.getLocation()).append("\n");
-	  invoice.append("You have ordered the following from ").append(restaurant.getName()).append(" in ")		
-	  .append(restaurant.getLocation()).append(":\n");
+	  invoice.append("Customer: ").append(customer.getCustomerName()).append("\n");
+	  invoice.append("Email: ").append(customer.getCustomerEmail()).append("\n");
+	  invoice.append("Phone number: ").append(customer.getCustomerNumber()).append("\n");
+	  invoice.append("Location: ").append(customer.getCustomerLocation()).append("\n");
+	  invoice.append("You have ordered the following from ").append(restaurant.getRestaurantName()).append(" in ")		
+	  .append(restaurant.getRestaurantLocation()).append(":\n");
 	  invoice.append("1 x Pepperoni pizza (R78.00)\n");
 	  invoice.append("2 x Hawaiian pizza (R82.00)\n");
 	  invoice.append("Special instructions: Extra tomato base on the Pepperoni pizza\n");
 	  invoice.append("Total: R242.00\n");
 
 	  if (driver != null) {
-		  invoice.append(driver.getName())
+		  invoice.append(driver.getDriverName())
 		  .append(" is nearest to the restaurant and so they will be delivering your order to you at:\n");
-		  invoice.append(customer.getAddress()).append("\n");
+		  invoice.append(customer.getCustomerAddress()).append("\n");
 		  invoice.append("If you need to contact the restaurant, their number is ")
-		  .append(restaurant.getContactNumber()).append(".\n");
+		  .append(restaurant.getRestaurantNumber()).append(".\n");
 	  } else {
 		  invoice.append("Sorry! Our drivers are too far away from you to be able to deliver to your location.\n");
 	  }
