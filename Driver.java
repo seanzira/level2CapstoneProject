@@ -1,23 +1,23 @@
 //Driver class
 public class Driver {
-  private String name;
-  private String location;
+  private String driverName;
+  private String driverLocation;
   private int load;
 
-  public Driver(String name, String location, int load) {  
-	  this.name = name;  
-	  this.location = location;
+  public Driver(String driverName, String driverLocation, int load) {  
+	  this.driverName = driverName;  
+	  this.driverLocation = driverLocation;
 	  this.load = load;  
   }
 
   //method for returning driver name
-  public String getName() {  
-	  return name;  
+  public String getDriverName() {  
+	  return driverName;  
   }
 
   //method for returning driver location
-  public String getLocation() {  
-	  return location;  
+  public String getDriverLocation() {  
+	  return driverLocation;  
   }
 
   //method for returning driver load
