@@ -115,6 +115,8 @@ public class InvoiceGenerated {
 		  int numDrivers = 0;
 		  String line;
 
+		  //Read each line from the reader until there are no more lines (null),
+		  //incrementing the number of drivers for each line read
 		  while ((line = reader.readLine()) != null) {
 			  numDrivers++;
 		  }
