@@ -15,7 +15,7 @@ public class InvoiceGenerated {
 	  Restaurant restaurant = createRestaurant(scanner);
 
 	  // Read drivers from file
-	  Driver[] drivers = readDrivers("src/drivers.txt");
+	  Driver[] drivers = readDrivers("src/driver-info.txt");
 
 	  // Find nearest driver
 	  Driver nearestDriver = findNearestDriver(customer, drivers);
