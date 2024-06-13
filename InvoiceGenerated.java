@@ -176,7 +176,7 @@ public class InvoiceGenerated {
 	  for (Driver driver : drivers) {
 			
 		  // check if the driver's location matches the customer's location
-		  if (driver.getLocation().equals(customer.getLocation())) {
+		  if (driver.getDriverLocation().equals(customer.getCustomerLocation())) {
 			  if (driver.getLoad() < minLoad) {
 				  nearestDriver = driver;
 				  minLoad = driver.getLoad();
