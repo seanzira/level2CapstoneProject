@@ -111,6 +111,9 @@ public class InvoiceGenerated {
 		  // Open the file for reading
 		  reader = new BufferedReader(new FileReader(fileName));
 
+		  //Create a list to store the drivers
+		  List<Driver> driverList = new ArrayList<>();
+
 		  // Count the number of drivers in the file
 		  int numDrivers = 0;
 		  String line;
@@ -138,18 +141,22 @@ public class InvoiceGenerated {
 			  String[] parts = line.split(",");
 
 			  // Extract name, location, and load from the parts
-			  String driverName = parts[0].trim();
-			  String driverLocation = parts[1].trim();
-			  int load = Integer.parseInt(parts[2].trim());
+			  if(parts.length == 3) {
+				  String driverName = parts[0].trim();
+				  String driverLocation = parts[1].trim();
+				  int load = Integer.parseInt(parts[2].trim());
 
-			  // Create a new Driver object and add it to the array
-			  drivers[i++] = new Driver(driverName, driverLocation, load);
+				  // Create a new Driver object and add it to the array
+				  Driver driver = new Driver(driverName, driverLocation, load);
+				  driverList.add(driver);
+			  } else {
+				  System.err.println("Skipping invalid line: " + line);
+			  }
 
 		  }
 
 		  // Return the array of drivers
-		  return drivers;
-
+		  return driverList.toArray(new Driver[0]);
 	  } finally {
 		  // Ensure the reader is closed even if an exception occurs
 		  if (reader != null) {
